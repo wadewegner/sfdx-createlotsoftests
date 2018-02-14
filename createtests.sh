@@ -6,7 +6,7 @@ git reset --hard HEAD;git clean -d -f .
 # set variables
 projectName="testProject"
 sourcePath="$projectName/force-app/main/default/classes"
-testSourcePath="$projectName/force-app/test/defaultclasses"
+testSourcePath="$projectName/force-app/test/default/classes"
 
 # create a sfdx project
 sfdx force:project:create -n $projectName
