@@ -8,11 +8,12 @@ projectName="testProject"
 sourcePath="$projectName/force-app/main/default/classes"
 testSourcePath="$projectName/force-app/test/default/classes"
 
-# create a sfdx project
-sfdx force:project:create -n $projectName
-
 # create the path for our classes & tests
 mkdir -p $sourcePath
+mkdir -p $testSourcePath
+
+# create a sfdx project
+sfdx force:project:create -n $projectName
 
 counter=1
 while [ $counter -le 10 ]
