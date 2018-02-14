@@ -7,6 +7,7 @@ git reset --hard HEAD;git clean -d -f .
 projectName="testProject"
 sourcePath="$projectName/force-app/main/default/classes"
 testSourcePath="$projectName/force-app/test/default/classes"
+totalTests=10
 
 # create the path for our classes & tests
 mkdir -p $sourcePath
@@ -16,7 +17,7 @@ mkdir -p $testSourcePath
 sfdx force:project:create -n $projectName
 
 counter=1
-while [ $counter -le 10 ]
+while [ $counter -le $totalTests ]
 do
 
   echo "Running $counter"
