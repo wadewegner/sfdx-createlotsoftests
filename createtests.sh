@@ -46,9 +46,9 @@ do
 
   # create files
   echo "$classTemplateFile" > "$sourcePath"/"$classTemplate".cls
-  echo "$classTemplateFileMetadata" > "$sourcePath"/"$testTemplate".cls-meta.xml
+  echo "$classTemplateFileMetadata" > "$sourcePath"/"$classTemplate".cls-meta.xml
   echo "$testTemplateFile" > "$testSourcePath"/"$testTemplate".cls
-  echo "$testTemplateFileMetadata" > "$testSourcePath"/"$classTemplate".cls-meta.xml
+  echo "$testTemplateFileMetadata" > "$testSourcePath"/"$testTemplate".cls-meta.xml
 
   ((counter++))
 done
