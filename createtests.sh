@@ -54,6 +54,8 @@ do
   ((counter++))
 done
 
+echo "Finished creating classes and tests"
+
 cd $projectName
 
 sfdx force:org:create -s -f config/project-scratch-def.json
