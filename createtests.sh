@@ -1,11 +1,17 @@
 #!/bin/bash
 
+# reset the repo
+git reset --hard HEAD;git clean -d -f .
+
+# set variables
 projectName="testProject"
+sourcePath="$projectName/force-app/main/default/classes"
+testSourcePath="$projectName/force-app/test/defaultclasses"
 
-rm -rf $projectName
-
+# create a sfdx project
 sfdx force:project:create -n $projectName
-sourcePath="$projectName/force-app/main/classes"
+
+# create the path for our classes & tests
 mkdir -p $sourcePath
 
 counter=1
@@ -41,8 +47,8 @@ do
   # create files
   echo "$classTemplateFile" > "$sourcePath"/"$classTemplate".cls
   echo "$classTemplateFileMetadata" > "$sourcePath"/"$testTemplate".cls-meta.xml
-  echo "$testTemplateFile" > "$sourcePath"/"$testTemplate".cls
-  echo "$testTemplateFileMetadata" > "$sourcePath"/"$classTemplate".cls-meta.xml
+  echo "$testTemplateFile" > "$testSourcePath"/"$testTemplate".cls
+  echo "$testTemplateFileMetadata" > "$testSourcePath"/"$classTemplate".cls-meta.xml
 
   ((counter++))
 done
